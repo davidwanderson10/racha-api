@@ -1,0 +1,9 @@
+node_modules
+*.log
+.env
+.env.development.local
+.env.production.local
+.env.test.local
+.history
+scratch
+static
