@@ -8,14 +8,14 @@ app.use(express.json());
 
 app.use('/api', playerRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 async function startServer() {
   try {
     await sequelize.authenticate();
     console.log('Database connected successfully');
     
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       console.log(`Server running on port ${PORT}`);
     });
   } catch (error) {
