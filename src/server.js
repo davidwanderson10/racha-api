@@ -1,12 +1,12 @@
 const express = require('express');
 const sequelize = require('./config/database');
-const playerRoutes = require('./routes/playerRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 require('dotenv').config();
 
 const app = express();
 app.use(express.json());
 
-app.use('/api', playerRoutes);
+app.use('/api', apiRoutes);
 
 const PORT = process.env.PORT || 10000;
 
