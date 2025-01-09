@@ -43,19 +43,19 @@ const Player = sequelize.define('Player', {
     type: DataTypes.INTEGER,
     allowNull: true
   },
-  '1o': {
+  primeiro: {
     type: DataTypes.INTEGER,
     allowNull: true
   },
-  '2o': {
+  segundo: {
     type: DataTypes.INTEGER,
     allowNull: true
   },
-  '3o': {
+  terceiro: {
     type: DataTypes.INTEGER,
     allowNull: true
   },
-  '4o': {
+  quarto: {
     type: DataTypes.INTEGER,
     allowNull: true
   },

@@ -35,24 +35,20 @@ const Round = sequelize.define('Round', {
     type: DataTypes.JSON,
     allowNull: true
   },
-  '1o': {
+  primeiro: {
     type: DataTypes.STRING,
     allowNull: true
   },
-  '2o': {
+  segundo: {
     type: DataTypes.STRING,
     allowNull: true
   },
-  '3o': {
+  terceiro: {
     type: DataTypes.STRING,
     allowNull: true
   },
-  '4o': {
+  quarto: {
     type: DataTypes.STRING,
-    allowNull: true
-  },
-  times: {
-    type: DataTypes.JSON,
     allowNull: true
   },
   data: {
