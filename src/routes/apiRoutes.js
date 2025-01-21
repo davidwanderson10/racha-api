@@ -242,7 +242,7 @@ router.get('/rounds', async (req, res) => {
 router.get('/rounds-metrics', async (req, res) => {
   try {
     const round = await Round.findAll({
-      attributes: ['gols', 'assistencias', 'jogos', 'cotas'],
+      attributes: ['gols', 'assistencias'],
     });
 
     let acumulado = round.reduce((acc, curr) => {
