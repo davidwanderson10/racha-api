@@ -81,6 +81,27 @@ router.get('/player-gol', async (req, res) => {
   let order = req.headers.order === 'nome' ? [['nome', 'ASC']] : [['pontos', 'DESC'], ['cotas']]
   try {
     const players = await Player.findAll({
+      attributes: [
+        'id',
+        'nome',
+        [literal('(vitorias * 3) + empates + (primeiro * 10) + (segundo * 6) + (terceiro * 5)'), 'pontos'],
+        'cotas',
+        'jogos',
+        'vitorias',
+        'empates',
+        'derrotas',
+        'gols_pro',
+        'gols_contra',
+        [literal('gols_pro - gols_contra'), 'saldo'],
+        'primeiro',
+        'segundo',
+        'terceiro',
+        'quarto',
+        'gols',
+        'ass',
+        'amarelo',
+        'vermelho'
+      ],
       where: {
         nome: { [Op.like]: '%(G)%' },
       },
