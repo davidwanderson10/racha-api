@@ -284,10 +284,10 @@ router.get('/rounds-metrics', async (req, res) => {
 });
 
 router.get('/rounds/:id', async (req, res) => {
-    let id = req.params.id
+    let numero = req.params.id
     try {
       const round = await Round.findOne({
-        where: { id }
+        where: { numero }
     })
       res.json(round); 
     } catch (error) {
@@ -314,16 +314,16 @@ router.post('/rounds', async (req, res) => {
 router.put('/rounds/:id', async (req, res) => {
 
   try {
-    const validate = valid(req.headers.key)
+    const validate = valid(req.headers.key || '')
     if (validate) {
       let id = req.params.id
       const round = await Round.update(req.body, {
           where: { id } 
       });
-      res.status(200).json(round);
+      res.status(200).json({message: `Rodada ${req.body.numero} alterada com sucesso!`});
     }
     else {
-      res.status(401).json([]);
+      res.status(401).json({message: `Código inválido! Sai fora gambá safado!`});
     }
   } catch (error) {
       res.status(400).json({ error: error.message });
