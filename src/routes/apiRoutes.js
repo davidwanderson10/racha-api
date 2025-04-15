@@ -253,7 +253,10 @@ try {
 // ROTAS DE RODADAS
 router.get('/rounds', async (req, res) => {
   try {
-    const round = await Round.findAll();
+    const round = await Round.findAll(
+      order: [
+                ['numero', 'DESC']                                  
+      ]);
     res.json(round); 
   } catch (error) {
     res.status(500).json({ error: error.message });
