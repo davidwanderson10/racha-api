@@ -255,7 +255,7 @@ router.get('/rounds', async (req, res) => {
   try {
     const round = await Round.findAll(
       order: [
-                ['numero', 'DESC']                                  
+                ['createdAt', 'ASC']                                  
       ]);
     res.json(round); 
   } catch (error) {
